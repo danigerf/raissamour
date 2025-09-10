@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  {% include head.html %}
+  <body>
+    <div class="container">
+      {% include header.html %}
+      <div>
+        <a href="/">
+          <p>&larr; voltar</p>
+        </a>
+      </div>
+      <div class="row">
+        <img
+          src="{{page.image}}"
+          alt="{{page.title}}"
+          class="col-sm-6 col-lg-4 mb-4 img-fluid"
+        />
+        <div class="col-sm-6 col-lg-4 mb-4">{{content}}</div>
+      </div>
+    </div>
+    {% include scripts.html %}
+  </body>
+</html>
