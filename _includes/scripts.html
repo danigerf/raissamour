@@ -6,12 +6,39 @@
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 <script>
-  var grid = document.querySelector("#gallery");
-  imagesLoaded(grid, function () {
-    new Masonry(grid, {
-      itemSelector: ".col-sm-6",
-      percentPosition: true,
-      gutter: 16,
-    });
+  document.addEventListener("DOMContentLoaded", function () {
+    // Adicionar um pequeno atraso para garantir que o Bootstrap tenha terminado o layout
+    setTimeout(function () {
+      var grid = document.querySelector("#gallery");
+
+      // Primeiro, garantir que as imagens estão carregadas
+      imagesLoaded(grid, function () {
+        // Inicializar o Masonry com as configurações corretas
+        var msnry = new Masonry(grid, {
+          itemSelector: ".grid-item",
+          percentPosition: true,
+          gutter: 16,
+          transitionDuration: "0.3s",
+        });
+
+        // Forçar um layout refresh após um pequeno delay
+        setTimeout(function () {
+          msnry.layout();
+        }, 100);
+      });
+    }, 100);
+  });
+
+  // Também recalcular o layout quando a janela for redimensionada
+  window.addEventListener("resize", function () {
+    var grid = document.querySelector("#gallery");
+    if (grid && typeof Masonry !== "undefined") {
+      var msnry = Masonry.data(grid);
+      if (msnry) {
+        setTimeout(function () {
+          msnry.layout();
+        }, 100);
+      }
+    }
   });
 </script>
