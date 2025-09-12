@@ -8,3 +8,8 @@ body {
 h1 {
   font-weight: bold;
 }
+
+a{
+  text-decoration: none;
+  color: black;
+}
