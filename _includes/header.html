@@ -1,26 +1,23 @@
+<div class="	d-block d-sm-block d-md-none">
+  <div class="row justify-content-between">
+  <div class="text-center col-auto">
+    <img src="/assets/images/logo.svg" alt="logo-atelie" height="100" />
+  </div>
+<div class="col-auto align-self-center">
+  {% include navbar.html%}
+
+</div></div>    <hr style="border-top: 2px solid black" /></div>
+
+
+<div class="d-none d-sm-block">
 <div class="text-center mx-auto mt-5">
   <img src="/assets/images/logo.svg" alt="logo-atelie" height="100" />
 </div>
 
-<div class="row text-center justify-content-center mt-5">
-  <a
-    href="/"
-    {%if page.url=""="item.link"%}
-    class="current"
-    {%endif%}
-    class="col-auto"
-    >OBRAS DISPONÍVEIS</a
-  >
-  <a href="/indisponivel" class="col-auto">OBRAS INDISPONÍVEIS</a>
-  <a href="/sobre" class="col-auto">SOBRE</a>
-  <a href="/contato" class="col-auto">CONTATO</a>
-</div>
+{% include navbar.html%}
+
 <div class="mt-5 mb-5">
   <hr style="border-top: 2px solid black" />
 </div>
 
-<nav>
-  {% for item in site.data.navigation %}
-    <a href="{{ item.link }}"{% if page.url == item.link %} class="current"{% endif %}>{{ item.name }}</a>
-  {% endfor %}
-</nav>
+</div>

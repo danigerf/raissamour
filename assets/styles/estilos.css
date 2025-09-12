@@ -9,16 +9,10 @@ h1 {
   font-weight: bold;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
-
 .current {
-  color: green;
+  font-weight: bold;
 }
 
-.grid-sizer {
-  width: 33.333%;
-  /* garante 3 colunas */
+nav {
+  color: black !important;
 }
