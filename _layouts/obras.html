@@ -10,13 +10,11 @@
         </a>
       </div>
       <div class="row">
-        <img
-          src="{{page.image}}"
-          alt="{{page.title}}"
-          class="col-sm-6 col-lg-4 mb-4 img-fluid"
-        />
         <div class="col-sm-6 col-lg-4 mb-4">
-        <h2>{{page.title | upcase}}</h2>
+          <img src="{{page.image}}" alt="{{page.title}}" class="img-fluid" />
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <h2>{{page.title | upcase}}</h2>
           {{content}}
         </div>
       </div>
