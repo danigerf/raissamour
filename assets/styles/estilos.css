@@ -13,6 +13,11 @@ h1 {
   font-weight: bold;
 }
 
-nav {
+.nav-item {
   color: black !important;
+}
+
+.navbar-toggler {
+  border: none !important;
+  color: black;
 }

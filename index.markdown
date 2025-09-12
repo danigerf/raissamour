@@ -1,9 +1,7 @@
 ---
-title: Ateliê Raissa Moura
+title: Obras Disponíveis
 layout: default
 ---
-
-
 
   <div class="row grid d-block mx-auto" data-masonry='{"percentPosition": true }'>
   
