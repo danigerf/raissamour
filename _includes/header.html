@@ -3,7 +3,14 @@
 </div>
 
 <div class="row text-center justify-content-center mt-5">
-  <a href="/" class="col-auto">OBRAS DISPONÍVEIS</a>
+  <a
+    href="/"
+    {%if page.url=""="item.link"%}
+    class="current"
+    {%endif%}
+    class="col-auto"
+    >OBRAS DISPONÍVEIS</a
+  >
   <a href="/indisponivel" class="col-auto">OBRAS INDISPONÍVEIS</a>
   <a href="/sobre" class="col-auto">SOBRE</a>
   <a href="/contato" class="col-auto">CONTATO</a>
@@ -11,3 +18,9 @@
 <div class="mt-5 mb-5">
   <hr style="border-top: 2px solid black" />
 </div>
+
+<nav>
+  {% for item in site.data.navigation %}
+    <a href="{{ item.link }}"{% if page.url == item.link %} class="current"{% endif %}>{{ item.name }}</a>
+  {% endfor %}
+</nav>

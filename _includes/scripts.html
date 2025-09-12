@@ -3,42 +3,21 @@
   integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
   crossorigin="anonymous"
 ></script>
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-<!-- <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Adicionar um pequeno atraso para garantir que o Bootstrap tenha terminado o layout
-    setTimeout(function () {
-      var grid = document.querySelector("#gallery");
+var elem = document.querySelector('.grid');
 
-      // Primeiro, garantir que as imagens estão carregadas
-      imagesLoaded(grid, function () {
-        // Inicializar o Masonry com as configurações corretas
-        var msnry = new Masonry(grid, {
-          itemSelector: ".grid-item",
-          percentPosition: true,
-          gutter: 16,
-          transitionDuration: "0.3s",
-        });
+  var elem = document.querySelector('.grid');
 
-        // Forçar um layout refresh após um pequeno delay
-        setTimeout(function () {
-          msnry.layout();
-        }, 100);
-      });
-    }, 100);
+  imagesLoaded(elem, function() {
+    var msnry = new Masonry(elem, {
+
+      percentPosition: true,
+   
+    });
   });
 
-  // Também recalcular o layout quando a janela for redimensionada
-  window.addEventListener("resize", function () {
-    var grid = document.querySelector("#gallery");
-    if (grid && typeof Masonry !== "undefined") {
-      var msnry = Masonry.data(grid);
-      if (msnry) {
-        setTimeout(function () {
-          msnry.layout();
-        }, 100);
-      }
-    }
-  });
-</script> -->
+</script>
