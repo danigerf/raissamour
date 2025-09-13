@@ -21,3 +21,19 @@ h1 {
   border: none !important;
   color: black;
 }
+
+a{
+  color: black !important;
+}
+
+hr{
+  border: none;
+}
+
+p{
+  text-align: justify;
+}
+
+a{
+  text-decoration: none;
+}

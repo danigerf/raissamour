@@ -5,20 +5,46 @@
     <div class="container">
       {% include header.html %}
       <div>
-        <a href="/">
-          <p>&larr; voltar</p>
-        </a>
+        <div class="d-flex justify-content-between mb-3">
+          {% if page.previous %}
+          <a href="{{ page.previous.url }}">&larr; Obra anterior</a>
+          {% endif %} {% if page.next %}
+          <a href="{{ page.next.url }}">Próxima obra &rarr;</a>
+          {% endif %}
+        </div>
       </div>
       <div class="row">
         <div class="col-sm-6 col-lg-4 mb-4">
-          <img src="{{page.image}}" alt="{{page.title}}" class="img-fluid" />
+          <img
+            src="{{page.image}}"
+            alt="{{page.title}}"
+            class="img-fluid rounded"
+          />
         </div>
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <h2>{{page.title | upcase}}</h2>
-          {{content}}
+        <div class="col-sm-6 col-lg-8 mb-4">
+          <h2>{{page.title}}</h2>
+          <p>{{content}}</p>
         </div>
       </div>
+
+      <div class="row mt-5">
+        <h3>Mais obras:</h3>
+        {% assign current_category = page.categories[0] %} {% assign
+        related_posts = site.categories[current_category] %} {% for post in
+        related_posts %} {% if post.url != page.url %}
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="{{ post.url }}">
+            <img
+              src="{{ post.image }}"
+              alt="{{ post.title }}"
+              class="img-fluid rounded"
+            />
+          </a>
+        </div>
+        {% endif %} {% endfor %}
+      </div>
     </div>
+
     {% include scripts.html %}
   </body>
 </html>
