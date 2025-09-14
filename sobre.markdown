@@ -1,6 +1,6 @@
 ---
 title: Sobre
-layout: obras
+layout: sobre
 image: /assets/images/sobre.jpg
 ---
 

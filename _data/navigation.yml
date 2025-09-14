@@ -1,5 +1,7 @@
-- title: OBRAS DISPONÍVEIS
+- title: INÍCIO
   url: /
+- title: OBRAS DISPONÍVEIS
+  url: /disponivel/
 - title: OBRAS INDISPONÍVEIS
   url: /indisponivel/
 - title: SOBRE

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  {% include head.html %}
+  <body>
+    <div class="container">
+      {% include header.html %}
+      <div>
+        <div class="d-flex justify-content-between mb-3">
+          {% if page.previous %}
+          <a href="{{ page.previous.url }}">&larr; Obra anterior</a>
+          {% endif %} {% if page.next %}
+          <a href="{{ page.next.url }}">Próxima obra &rarr;</a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <img
+            src="{{page.image}}"
+            alt="{{page.title}}"
+            class="img-fluid rounded"
+          />
+        </div>
+        <div class="col-sm-6 col-lg-8 mb-4">
+          <h2>{{page.title}}</h2>
+          <p>{{content}}</p>
+        </div>
+      </div>
+    </div>
+
+    {% include scripts.html %}
+  </body>
+</html>
